@@ -2,6 +2,15 @@
   <h2>Charger Models</h2>
 </div>
 
+<div class="example-button-row"> 
+
+  <button mat-raised-button color="primary" (click)="openAddChargerDialog()">Add New Charger Model</button>
+
+
+   <!-- <button color="accent" mat-fab>charger</button> -->
+
+</div>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Model Column -->
@@ -31,7 +40,10 @@
       <button mat-icon-button color="primary" (click)="onView(element.id)">
         <mat-icon>visibility</mat-icon>
       </button>
-      <button mat-icon-button color="accent" (click)="onEdit(element.id)">
+      <!-- <button mat-icon-button color="accent" (click)="onEdit(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button> -->
+      <button mat-icon-button color="accent" (click)="onEdit(element)">
         <mat-icon>edit</mat-icon>
       </button>
       <button mat-icon-button color="warn" (click)="onDelete(element.id)">

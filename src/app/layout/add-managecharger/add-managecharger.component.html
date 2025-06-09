@@ -1,0 +1,30 @@
+
+
+<mat-dialog-content  align="center" class="dialog-content">
+    <h2 mat-dialog-title> {{ data?.mode === 'edit' ? 'Update Charger' : 'Add New Charger' }} </h2>
+    <form [formGroup]="chargerForm">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Model</mat-label>
+        <input matInput formControlName="model" required />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="Active">Active</mat-option>
+          <mat-option value="Inactive">Inactive</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-dialog-content>
+  
+  <mat-dialog-actions align="center" class="dialog-content">
+    <button mat-raised-button color="primary" class="button" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button class="add-button" [disabled]="chargerForm.invalid" (click)="onSubmit()">{{ data?.mode === 'edit' ? 'Update' : 'Add' }}</button>
+  </mat-dialog-actions>
+  

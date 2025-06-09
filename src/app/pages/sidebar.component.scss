@@ -81,11 +81,23 @@ mat-sidenav-content {
 .nested-link {
   font-size: 13px;
   padding: 6px 12px;
-  color: #2e7d32;
+  color: #0b0eb4;
   display: block;
   text-decoration: none;
 }
 
 .nested-link:hover {
   background-color: #dcedc8;
+}
+.logo-section{
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  display: flex;
+  
+}
+
+.brand-logo {
+  width: 100px;
+  height: 65px;
 }

@@ -1,4 +1,11 @@
 <h2>Manage Chargers</h2>
+<div class="example-button-row">
+<button mat-raised-button color="primary" (click)="openAddChargerDialog()" >Add New Charger</button>
+
+
+   <!-- <button color="accent" mat-fab>charger</button> -->
+
+</div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <ng-container matColumnDef="chargerId">
@@ -19,6 +26,25 @@
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef> Status </th>
     <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+
+   <!-- Action Column -->
+   <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button color="primary" (click)="onView(element.id)">
+        <mat-icon>visibility</mat-icon>
+      </button>
+      <!-- <button mat-icon-button color="accent" (click)="onEdit(element.id)">
+        <mat-icon>edit</mat-icon>
+      </button> -->
+      <button mat-icon-button color="accent" (click)="onEdit(element)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="onDelete(element.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
